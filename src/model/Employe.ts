@@ -14,7 +14,6 @@ export default class Employe extends Person{
 
     public toString(): string{
         return `
-                Nome: ${this.getName()} 
-                ID: ${this.getId()}`;
+                Nome: ${this.getName()} ID: ${this.getId()}`;
     }
 }

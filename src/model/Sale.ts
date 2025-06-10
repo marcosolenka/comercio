@@ -3,6 +3,7 @@ import Client from "./Client";
 import Employe from "./Employe";
 import SalePriceCalculator from "../service/SalePriceCalculator";
 import { SaleStatus } from "../enums/SaleStatus";
+import { CalculatorOperation } from "../enums/CalculatorOperation";
 
 export default class Sale{
     private saleItems: Product[] = [];
@@ -22,13 +23,20 @@ export default class Sale{
     public addProductOnSale(product: Product, quantity: number): void {
         this.saleItems.push(product);
         this.saleItemsQuantity.push(quantity);
-        const price = this.calculator.calculate(product.getValue(), quantity);
+        const price = this.calculator.calculate(product, quantity, CalculatorOperation.ADICAO);
         this.salePrice += price;
     }
 
     public removeSaleItem(index: number){
-        console.log(`Item ${(this.saleItems[index] as any).product.getName()} removido`);
+        console.log(`Item ${this.saleItems[index].getName()} removido`);
         this.saleItems.splice(index, 1);
+        this.saleItemsQuantity.splice(index, 1);
+    }
+
+    public changeSaleQuantity(index: number, quantity: number): void{
+        this.salePrice += this.calculator.calculate(this.saleItems[index], this.saleItemsQuantity[index], CalculatorOperation.SUBTRACAO);
+        this.salePrice += this.calculator.calculate(this.saleItems[index], quantity, CalculatorOperation.ADICAO);
+
     }
 
     public getClient(): Client{
@@ -49,6 +57,10 @@ export default class Sale{
 
     public getSaleItems(): Object[]{
         return this.saleItems;
+    }
+
+    public getSaleItemsQuanties(): number[]{
+        return this.saleItemsQuantity;
     }
 
     public getSalePrice(): number{
@@ -73,7 +85,7 @@ export default class Sale{
         Produtos Vendidos:`
     let saleProducts = '\n';
         for (let i = 0; i < this.saleItems.length; i++){
-            saleProducts += '\n Produto: ' + this.saleItems[i].getName() + ' ' ;
+            saleProducts +=  this.saleItems[i].getName() + '\n' ;
             saleProducts += 'quantidade: ' + this.saleItemsQuantity[i]; + '\n';
     }
 

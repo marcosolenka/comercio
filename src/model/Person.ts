@@ -1,4 +1,4 @@
-export default class Person{
+export default abstract class Person{
 
     private name!: string;
   
@@ -10,7 +10,5 @@ export default class Person{
         this.name = name;
     }
 
-    public toString(): string{
-        return `Nome: ${this.getName}`;
-    }
+    public abstract toString(): string;
 }

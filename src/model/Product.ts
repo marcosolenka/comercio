@@ -1,4 +1,6 @@
-export default class Product{
+import { IProduct } from "../interfaces/IProduct";
+
+export default class Product implements IProduct{
    private name!: string;
    private value!: number;
 

@@ -28,13 +28,7 @@ export default class MainScreen {
         while (continues) {
 
 
-            let choice = parseInt(this.prompt(`
-                                               1 - Cadastrar Produto
-                                               2 - Cadastrar Cliente
-                                               3 - Cadastrar Colaborador
-                                               4 - Registrar Venda
-                                               5 - Sair
-                                               Resposta: `));
+            let choice = parseInt(this.prompt(`\n1 - Cadastrar Produto \n2 - Cadastrar Cliente \n3 - Cadastrar Colaborador \n4 - Registrar Venda \n5 - Sair \nResposta: `));
             switch (choice) {
                 case 1:
                     this.productRegister.addProduct();
@@ -47,6 +41,7 @@ export default class MainScreen {
                     break;
                 case 4:
                     this.saleRegister.addSale();
+                    break;
                 case 5:
                     continues = false;
                     break;
