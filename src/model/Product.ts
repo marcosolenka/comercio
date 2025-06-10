@@ -19,7 +19,6 @@ export default class Product implements IProduct{
    }
 
    public toString(): string{
-      return `Produto: ${this.getName()}
-      Valor: ${this.getValue()}`
+      return `\nProduto: ${this.getName()} Valor: ${this.getValue()}`
    }
 }

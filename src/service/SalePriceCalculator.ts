@@ -6,10 +6,15 @@ export default class SalePriceCalculator {
     public calculate(product: Product, quantity: number, operation: string): number {
 
         if(operation === CalculatorOperation.ADICAO){
-            return product.getValue() * quantity;
+            this.value =  product.getValue() * quantity;
+            console.log(`Adição: ${this.value}`);
+            return this.value;
+            
         }
         if (operation === CalculatorOperation.SUBTRACAO){
-            this.value -= product.getValue() * quantity;
+            this.value = -product.getValue() * quantity;
+            console.log(`Subtracao: ${this.value}`);
+            return this.value;
         }
         return 0;
     }

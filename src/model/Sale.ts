@@ -35,6 +35,7 @@ export default class Sale{
 
     public changeSaleQuantity(index: number, quantity: number): void{
         this.salePrice += this.calculator.calculate(this.saleItems[index], this.saleItemsQuantity[index], CalculatorOperation.SUBTRACAO);
+        this.saleItemsQuantity[index] = quantity;
         this.salePrice += this.calculator.calculate(this.saleItems[index], quantity, CalculatorOperation.ADICAO);
 
     }

@@ -49,7 +49,7 @@ export default class SaleRegister {
     }
 
     public addClient(): Client{
-        console.log('----------LISTA DE CLIENTES---------------')
+        console.log('\n----------LISTA DE CLIENTES---------------')
         let clients: Client[] = this.control.db.getClients();
         for (let i = 0; i < clients.length; i++){
             console.log(`ID: ${i} Nome: ${clients[i].getName()}\n`);
@@ -60,7 +60,7 @@ export default class SaleRegister {
             clientOption = parseInt(this.prompt(`\nDigite o ID do cliente que está fazendo a compra: `), 10);
         } while (isNaN(clientOption) || !Number.isInteger(clientOption));
         let clientSelected = this.control.db.getClient(clientOption);
-        console.log('------------------------------------------')
+        console.log('------------------------------------------');
         console.log(`cliente selecionado: ${clientSelected.getName()} \n`)
         return clientSelected;
     }

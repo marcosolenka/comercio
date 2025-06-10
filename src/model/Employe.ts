@@ -13,7 +13,6 @@ export default class Employe extends Person{
     }
 
     public toString(): string{
-        return `
-                Nome: ${this.getName()} ID: ${this.getId()}`;
+        return `\nNome: ${this.getName()} ID: ${this.getId()}`;
     }
 }
