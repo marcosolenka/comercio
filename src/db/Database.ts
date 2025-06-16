@@ -12,7 +12,6 @@ export default class Database {
 
     public addNewProduct(product: Product): void {
         this.productDb.push(product);
-        console.log(product.toString());
     }
     public getProduct(index: number): Product {
         return this.productDb[index];
@@ -24,7 +23,6 @@ export default class Database {
 
     public addNewClient(client: Client): void{
         this.clientDb.push(client);
-        console.log(client.toString());
     }
 
     public getClient(index: number): Client{
@@ -37,7 +35,6 @@ export default class Database {
 
     public addNewEmploye(employe: Employe): void{
         this.employeDb.push(employe);
-        console.log(employe.toString());
     }
 
     public getEmploye(index: number): Employe{
@@ -50,7 +47,6 @@ export default class Database {
 
     public addNewSale(sale: Sale) {
         this.sales.push(sale);
-        console.log(sale.toString());
     }
 
     public getSale(index: number): Sale{

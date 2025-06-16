@@ -12,7 +12,7 @@ export default class ProductRegister {
     }
 
     public addProduct(): void{
-        let product = new Product();
+        let product = this.control.getNewProduct();
         let name = this.prompt("\ndigite o nome do produto: "); 
         let value = Number(this.prompt("Digite o valor do produto: "));
         

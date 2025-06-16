@@ -4,6 +4,7 @@ import Product from "../model/Product";
 import MainScreen from "../view/MainScreen";
 import Sale from "../model/Sale";
 import SalePriceCalculator from "../service/SalePriceCalculator";
+import ClientValidator from "../service/ClientValidator";
 
 export default class MainController{
 

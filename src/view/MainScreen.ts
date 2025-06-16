@@ -13,7 +13,6 @@ export default class MainScreen {
     private clientRegister: ClientRegister;
     private saleRegister: SaleRegister;
     private employeRegister: EmployeRegister;
-
     constructor(control: MainController){
         
         this.control = control;
@@ -28,7 +27,7 @@ export default class MainScreen {
         while (continues) {
 
 
-            let choice = parseInt(this.prompt(`\n1 - Cadastrar Produto \n2 - Cadastrar Cliente \n3 - Cadastrar Colaborador \n4 - Registrar Venda \n5 - Sair \nResposta: `));
+            let choice = parseInt(this.prompt(`\n1 - Cadastrar Produto \n2 - Cadastrar Cliente \n3 - Cadastrar Colaborador \n4 - Registrar Venda \n5 - Listar Clientes \n6 - Sair \nResposta: `));
             switch (choice) {
                 case 1:
                     this.productRegister.addProduct();
@@ -43,6 +42,13 @@ export default class MainScreen {
                     this.saleRegister.addSale();
                     break;
                 case 5:
+                    let clients = this.control.db.getClients();
+                    console.log('Clientes Cadastrados\n');
+                    for (let i = 0; i < clients.length; i++){
+                        console.log((i + 1) + ' - ' + clients[i].toString());
+                    }
+                    break;
+                case 6:
                     continues = false;
                     break;
                 default:

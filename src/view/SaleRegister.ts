@@ -20,7 +20,6 @@ export default class SaleRegister {
         sale.setClient(this.addClient());
         sale.setEmploye(this.addEmploye());
         let aux = 'S';
-        console.log('------------------------------------------');
 
         do {
             //ADICAO DE PRODUTO NA VENDA
@@ -35,7 +34,6 @@ export default class SaleRegister {
         } while (aux === 'S');
 
         aux = 'S';
-        console.log('------------------------------------------');
         //ALTERAÇÃO DA VENDA
         do {
             aux = this.prompt(`\nDeseja alterar a venda em algum produto? \nS. Sim \nN. Não \nResposta: `).toUpperCase();

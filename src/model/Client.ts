@@ -13,6 +13,6 @@ export default class Client extends Person{
   }
 
   public toString(): string {
-    return `\nNome: ${this.getName()} CPF: ${this.getCPF()}`;
+    return `Nome: ${this.getName()} CPF: ${this.getCPF()}`;
   }
 }

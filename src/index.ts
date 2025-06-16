@@ -2,7 +2,9 @@ import MainController from "./controller/MainController";
 
  new MainController();
 
- //Injeção de dependência
- //Enum
- //Classe Abstrata
- //Interface
+ //falta
+ //try catch --ADICIONADO
+ //teste
+ //gerenciamento de persistencia (consultas) --ADICIONADO
+ //tipos genéricos --gerar em pdf a nota fiscal 
+ 
